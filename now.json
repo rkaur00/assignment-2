@@ -1,0 +1,21 @@
+
+{
+    "version": 2,
+    "name": "todolist",
+    "env": {
+      "DBHOST": "mytestdb.c4iwgy3inuws.us-east-2.rds.amazonaws.com",
+      "DBPORT": "3306",
+      "DBUSER": "ravinder1203",
+      "DBPASSWORD": "man05JAS",
+        "DBNAME": "todolist"
+      },
+    "builds": [{ "src": "api/*/index.js", "use": "@now/node" }],
+    "routes": [
+      { "src": "/api/get", "methods": ["GET"], "dest": "/api/get/index.js" },
+      { "src": "/api/update", "methods": ["PUT"], "dest": "/api/update/index.js" },
+      { "src": "/api/delete", "methods": ["DELETE"], "dest": "/api/delete/index.js" },
+      { "src": "/api/post", "methods": ["POST"], "dest": "/api/post/index.js" },
+      { "src": "/", "status": 404},
+      { "src": "/api", "status": 404}
+    ]
+  }
