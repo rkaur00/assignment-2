@@ -3,12 +3,12 @@
     "version": 2,
     "name": "todolist",
     "env": {
-      "DBHOST": "mytestdb.c4iwgy3inuws.us-east-2.rds.amazonaws.com",
-      "DBPORT": "3306",
-      "DBUSER": "ravinder1203",
-      "DBPASSWORD": "man05JAS",
-        "DBNAME": "todolist"
-      },
+      "DBHOST": "<DBHOST>",
+      "DBPORT": "<DBPORT>",
+      "DBUSER": "<DBUSER>",
+      "DBPASSWORD": "<DBPASS>",
+      "DBNAME": "<DBNAME>"
+    },
     "builds": [{ "src": "api/*/index.js", "use": "@now/node" }],
     "routes": [
       { "src": "/api/get", "methods": ["GET"], "dest": "/api/get/index.js" },
