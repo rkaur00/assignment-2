@@ -11,17 +11,18 @@ app.use(cors())
 
 app.use(async ctx => {
   ctx.type = 'text/xml';
-const data = await ctx.request.body
-const item = await createPost(data.todoItem)
-  ctx.body = item;
-  const twiml = new MessagingResponse();
+const todoItem = await ctx.request.body.item
+const item = await createPost(todoItem)
+ ctx.body = item;
+const twiml = new MessagingResponse();
  twiml.message('New todoList Item created');
+ ctx.body = twiml.toString()
  return twiml.toString();
 })
 
 async function createPost(todoItem) {
     try {
-      const itemData = await pool.query(`INSERT INTO list(todoItem) VALUES ('${todoItem}');`)
+      const itemData = await pool.query(`INSERT INTO todo(todoItem) VALUES ('${todoItem}');`)
       return itemData
     } catch (error) {
       console.log(error)
