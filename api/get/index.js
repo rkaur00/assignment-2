@@ -1,20 +1,20 @@
 const Koa = require('koa')
 const bodyParser = require('koa-bodyparser')
 const pool = require('../../db/db')
-
+const pino = require('koa-pino-logger')()
 const app = new Koa()
 app.use(bodyParser())
-
+app.use(pino)
 app.use(async ctx => {
-  const dbtitle = await ctx.request.body.title
-  const item = await show(dbtitle)
+   const item = await show()
+  ctx.log.info('Get all todo items')
   ctx.body = item
 })
 
-async function show(title) {
+async function show() {
   try {
-    const itemData = await pool.query(`SELECT * FROM list WHERE todoItem  LIKE '%${title}%'`)
-    return itemData[0]
+    const itemData = await pool.query(`SELECT * FROM list`)
+    return itemData
   } catch (error) {
     console.log(error)
   }
