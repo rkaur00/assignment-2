@@ -3,4 +3,10 @@ This will allow you to add items to a "todolist" database with SMS using twilio.
 
 My Twilio number: +16042105854
 
-Deployment Link for my GET endpoint: http https://todolist-av2ow5rb8.now.sh/api/get
+Deployment Link for GET endpoint: http https://todolist-av2ow5rb8.now.sh/api/get
+
+For checking Logging: Type on Terminal:
+- now ls
+- now log todolist-av2ow5rb8.now.sh
+ 
+ 
