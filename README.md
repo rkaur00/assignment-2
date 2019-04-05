@@ -5,7 +5,7 @@ My Twilio number: +16042105854
 
 Deployment Link for GET endpoint: http https://todolist-av2ow5rb8.now.sh/api/get
 
-For checking Logging: Type on Terminal:
+For checking Logs: Type on Terminal:
 - now ls
 - now log todolist-av2ow5rb8.now.sh
  
