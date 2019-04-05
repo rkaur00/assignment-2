@@ -3,10 +3,10 @@
     "version": 2,
     "name": "todolist",
     "env": {
-      "DBHOST": "mytestdb.c4iwgy3inuws.us-east-2.rds.amazonaws.com",
+      "DBHOST": "your_aws_endpoint",
       "DBPORT": "3306",
-      "DBUSER": "ravinder1203",
-      "DBPASSWORD": "man05JAS",
+      "DBUSER": "your_username",
+      "DBPASSWORD": "your_password",
         "DBNAME": "todolist"
       },
     "builds": [{ "src": "api/*/index.js", "use": "@now/node" }],
